@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -7,157 +6,97 @@
   <title>Którym krasnalem jesteś?</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      font-family: 'Segoe UI', sans-serif;
+      background: #e0f2f1;
       padding: 20px;
     }
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
-    h1, h2 {
+    h1 {
       text-align: center;
+      font-size: 2em;
+      color: #00695c;
     }
     .question {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
     .question h3 {
-      margin-bottom: 10px;
+      font-size: 1.1em;
+      color: #004d40;
     }
     .answers label {
       display: block;
-      margin-bottom: 5px;
+      margin: 8px 0;
     }
     button {
       display: block;
-      margin: 30px auto;
-      padding: 10px 20px;
-      font-size: 16px;
+      margin: 40px auto 20px;
+      padding: 12px 24px;
+      background-color: #00695c;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1em;
       cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #004d40;
     }
     .result-card {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 50px;
+      background: #f1f8e9;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     .result-card img {
       max-width: 300px;
       border-radius: 12px;
       margin: 20px auto;
-      display: block;
     }
     .result-card p {
       font-size: 18px;
       padding: 0 20px;
+      color: #33691e;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Którym wrocławskim krasnalem jesteś?</h1>
-    <form id="quizForm"></form>
+    <form id="quizForm"><div class="question"><h3>1. Jak spędzasz idealne popołudnie?</h3><label><input type="radio" name="q0" value="0" required> Medytując</label><label><input type="radio" name="q0" value="1" required> Na wykładzie</label><label><input type="radio" name="q0" value="2" required> Pomagając komuś</label><label><input type="radio" name="q0" value="3" required> Z książką</label><label><input type="radio" name="q0" value="4" required> Na sportowo</label><label><input type="radio" name="q0" value="5" required> W łazience z nicią</label></div><div class="question"><h3>2. Który cytat najlepiej Cię opisuje?</h3><label><input type="radio" name="q1" value="0" required> Uśmiech zaczyna się od zębów.</label><label><input type="radio" name="q1" value="1" required> W zdrowym ciele, zdrowy duch.</label><label><input type="radio" name="q1" value="2" required> Dobro wraca.</label><label><input type="radio" name="q1" value="3" required> Wiedza to potęga.</label><label><input type="radio" name="q1" value="4" required> Książka to przyjaciel.</label><label><input type="radio" name="q1" value="5" required> Nie ma rzeczy niemożliwych.</label></div><div class="question"><h3>3. Twój styl ubierania się to…</h3><label><input type="radio" name="q2" value="0" required> Sportowy</label><label><input type="radio" name="q2" value="1" required> Praktyczny</label><label><input type="radio" name="q2" value="2" required> Klasyczny</label><label><input type="radio" name="q2" value="3" required> Vintage</label><label><input type="radio" name="q2" value="4" required> Naturalny</label><label><input type="radio" name="q2" value="5" required> Kolorowy</label></div><div class="question"><h3>4. Twoja największa supermoc to:</h3><label><input type="radio" name="q3" value="0" required> Spokój</label><label><input type="radio" name="q3" value="1" required> Precyzja</label><label><input type="radio" name="q3" value="2" required> Wiedza praktyczna</label><label><input type="radio" name="q3" value="3" required> Determinacja</label><label><input type="radio" name="q3" value="4" required> Wiedza niszowa</label><label><input type="radio" name="q3" value="5" required> Empatia</label></div><div class="question"><h3>5. Gdybyś był miejscem we Wrocławiu, byłbyś:</h3><label><input type="radio" name="q4" value="0" required> Antykwariat</label><label><input type="radio" name="q4" value="1" required> Park</label><label><input type="radio" name="q4" value="2" required> Gabinet dentystyczny</label><label><input type="radio" name="q4" value="3" required> Jarmark</label><label><input type="radio" name="q4" value="4" required> Uniwersytet</label><label><input type="radio" name="q4" value="5" required> Most</label></div><div class="question"><h3>6. Co zawsze masz przy sobie?</h3><label><input type="radio" name="q5" value="0" required> Matę do jogi</label><label><input type="radio" name="q5" value="1" required> Zakładkę do książki</label><label><input type="radio" name="q5" value="2" required> Notatnik</label><label><input type="radio" name="q5" value="3" required> Coś słodkiego</label><label><input type="radio" name="q5" value="4" required> Szczoteczkę</label><label><input type="radio" name="q5" value="5" required> Wodę</label></div><div class="question"><h3>7. Twoje największe marzenie:</h3><label><input type="radio" name="q6" value="0" required> Książka</label><label><input type="radio" name="q6" value="1" required> Uśmiech</label><label><input type="radio" name="q6" value="2" required> Spokój</label><label><input type="radio" name="q6" value="3" required> Dobro świata</label><label><input type="radio" name="q6" value="4" required> Maraton</label><label><input type="radio" name="q6" value="5" required> Księgarnia</label></div><div class="question"><h3>8. Co Cię najbardziej denerwuje?</h3><label><input type="radio" name="q7" value="0" required> Kubek</label><label><input type="radio" name="q7" value="1" required> Głupota</label><label><input type="radio" name="q7" value="2" required> Bałagan</label><label><input type="radio" name="q7" value="3" required> Brak kultury</label><label><input type="radio" name="q7" value="4" required> Odkładanie</label><label><input type="radio" name="q7" value="5" required> Hałas</label></div><div class="question"><h3>9. W towarzystwie jesteś…</h3><label><input type="radio" name="q8" value="0" required> Słuchaczem</label><label><input type="radio" name="q8" value="1" required> Przypominaczem</label><label><input type="radio" name="q8" value="2" required> Żartownisiem</label><label><input type="radio" name="q8" value="3" required> Mentorem</label><label><input type="radio" name="q8" value="4" required> Introwertykiem</label><label><input type="radio" name="q8" value="5" required> Liderem</label></div><div class="question"><h3>10. Twoje guilty pleasure?</h3><label><input type="radio" name="q9" value="0" required> Second hand</label><label><input type="radio" name="q9" value="1" required> TikTok dentystyczny</label><label><input type="radio" name="q9" value="2" required> Filozofia</label><label><input type="radio" name="q9" value="3" required> Prezenty</label><label><input type="radio" name="q9" value="4" required> Kadzidła</label><label><input type="radio" name="q9" value="5" required> Adrenalina</label></div><div class="question"><h3>11. Jakie zwierzę Cię opisuje?</h3><label><input type="radio" name="q10" value="0" required> Golden</label><label><input type="radio" name="q10" value="1" required> Koń</label><label><input type="radio" name="q10" value="2" required> Lama</label><label><input type="radio" name="q10" value="3" required> Kot</label><label><input type="radio" name="q10" value="4" required> Sowa</label><label><input type="radio" name="q10" value="5" required> Królik</label></div><div class="question"><h3>12. Co robisz w niedzielę rano?</h3><label><input type="radio" name="q11" value="0" required> Dentysta</label><label><input type="radio" name="q11" value="1" required> Czytam</label><label><input type="radio" name="q11" value="2" required> Spotkanie</label><label><input type="radio" name="q11" value="3" required> Trening</label><label><input type="radio" name="q11" value="4" required> Biblioteka</label><label><input type="radio" name="q11" value="5" required> Medytacja</label></div></form>
     <button onclick="getResult()">Sprawdź wynik</button>
-    
-    <div class="result-card" id="Papa_Krasnal" style="display: none;">
-        <h2>Papa Krasnal</h2>
-        <img src="Papa-Krasnal2-Siem-jpg.jpg" alt="Papa Krasnal" />
-        <p>Władca krasnali, filozof z Pomarańczowej Alternatywy. Gdyby mógł, zrobiłby doktorat z żartu sytuacyjnego.</p>
-    </div>
-    
-    <div class="result-card" id="100matolog" style="display: none;">
-        <h2>100matolog</h2>
-        <img src="fotoswiat_pl_01574.jpg" alt="100matolog" />
-        <p>Specjalista od zębów i życiowych przypałów. Wierzy, że płyn do płukania ust może uratować świat.</p>
-    </div>
-    
-    <div class="result-card" id="Joginek" style="display: none;">
-        <h2>Joginek</h2>
-        <img src="images.jpeg" alt="Joginek" />
-        <p>Chill-master 3000. Ćwiczy asany, pije pokrzywę i medytuje nawet w kolejce do ZUS-u.</p>
-    </div>
-    
-    <div class="result-card" id="Życzliwek" style="display: none;">
-        <h2>Życzliwek</h2>
-        <img src="images-2.jpeg" alt="Życzliwek" />
-        <p>Promyczek miasta. Zna imiona gołębi na rynku i rozsyła dobre wibracje jak Spotify Premium.</p>
-    </div>
-    
-    <div class="result-card" id="Syzyfki" style="display: none;">
-        <h2>Syzyfki</h2>
-        <img src="Syzyfki-www.ocdn.eu.jpeg" alt="Syzyfki" />
-        <p>Krasnalowy multitasking. Dźwiga kulę i jeszcze dźwiga Twoje nastroje w sesji.</p>
-    </div>
-    
-    <div class="result-card" id="Antykwariusz" style="display: none;">
-        <h2>Antykwariusz</h2>
-        <img src="torbox_9836c6220d764870f023560b48efd917.jpg" alt="Antykwariusz" />
-        <p>Cichy mól książkowy. Woli zapach kurzu od zapachu ludzi, ale jak Cię polubi, to przegadasz wieczór.</p>
-    </div>
-    
+    <div class="result-card" id="Joginek" style="display: none;"><h2>Joginek</h2><img src="images.jpeg" alt="Joginek" /><p>Chill-master 3000. Ćwiczy asany, pije pokrzywę i medytuje nawet w kolejce do ZUS-u.</p></div><div class="result-card" id="Papa_Krasnal" style="display: none;"><h2>Papa Krasnal</h2><img src="Papa-Krasnal2-Siem-jpg.jpg" alt="Papa Krasnal" /><p>Władca krasnali, filozof z Pomarańczowej Alternatywy. Gdyby mógł, zrobiłby doktorat z żartu sytuacyjnego.</p></div><div class="result-card" id="Życzliwek" style="display: none;"><h2>Życzliwek</h2><img src="images-2.jpeg" alt="Życzliwek" /><p>Promyczek miasta. Zna imiona gołębi na rynku i rozsyła dobre wibracje jak Spotify Premium.</p></div><div class="result-card" id="Antykwariusz" style="display: none;"><h2>Antykwariusz</h2><img src="torbox_9836c6220d764870f023560b48efd917.jpg" alt="Antykwariusz" /><p>Cichy mól książkowy. Woli zapach kurzu od zapachu ludzi, ale jak Cię polubi, to przegadasz wieczór.</p></div><div class="result-card" id="Syzyfki" style="display: none;"><h2>Syzyfki</h2><img src="Syzyfki-www.ocdn.eu.jpeg" alt="Syzyfki" /><p>Krasnalowy multitasking. Dźwiga kulę i jeszcze dźwiga Twoje nastroje w sesji.</p></div><div class="result-card" id="100matolog" style="display: none;"><h2>100matolog</h2><img src="fotoswiat_pl_01574.jpg" alt="100matolog" /><p>Specjalista od zębów i życiowych przypałów. Wierzy, że płyn do płukania ust może uratować świat.</p></div>
   </div>
 
 <script>
-const questions = [
-  {
-    q: "Jak spędzasz idealne popołudnie?",
-    a: ["Medytując", "Na wykładzie", "Pomagając komuś", "Z książką", "Na sportowo", "W łazience z nicią"]
-  },
-  {
-    q: "Który cytat najlepiej Cię opisuje?",
-    a: ["Uśmiech zaczyna się od zębów.", "W zdrowym ciele, zdrowy duch.", "Dobro wraca.", "Wiedza to potęga.", "Książka to przyjaciel.", "Nie ma rzeczy niemożliwych."]
-  },
-  {
-    q: "Twój styl ubierania się to…",
-    a: ["Sportowy", "Praktyczny", "Klasyczny", "Vintage", "Naturalny", "Kolorowy"]
-  },
-  {
-    q: "Twoja największa supermoc to:",
-    a: ["Spokój", "Precyzja", "Wiedza praktyczna", "Determinacja", "Wiedza niszowa", "Empatia"]
-  },
-  {
-    q: "Gdybyś był miejscem we Wrocławiu, byłbyś:",
-    a: ["Antykwariat", "Park", "Gabinet dentystyczny", "Jarmark", "Uniwersytet", "Most"]
-  },
-  {
-    q: "Co zawsze masz przy sobie?",
-    a: ["Matę do jogi", "Zakładkę do książki", "Notatnik", "Coś słodkiego", "Szczoteczkę", "Wodę"]
+  const results = ['Joginek', 'Papa Krasnal', 'Życzliwek', 'Antykwariusz', 'Syzyfki', '100matolog'];
+
+  function getResult() {
+    const totalQuestions = 12;
+    const answers = Array.from(document.querySelectorAll("form input[type=radio]:checked"));
+    if (answers.length < totalQuestions) {
+      alert("Odpowiedz na wszystkie pytania!");
+      return;
+    }
+    const score = [0, 0, 0, 0, 0, 0];
+    answers.forEach((a, i) => {
+      score[parseInt(a.value)]++;
+    });
+    const max = Math.max(...score);
+    const winner = score.indexOf(max);
+    const resultId = results[winner].replaceAll(' ', '_');
+    document.querySelectorAll(".result-card").forEach(el => el.style.display = "none");
+    document.getElementById(resultId).style.display = "block";
   }
-];
-
-const results = ["Joginek", "Papa Krasnal", "Życzliwek", "Antykwariusz", "Syzyfki", "100matolog"];
-
-const form = document.getElementById("quizForm");
-questions.forEach((q, i) => {
-  const div = document.createElement("div");
-  div.className = "question";
-  div.innerHTML = `<h3>${i + 1}. ${q.q}</h3>`;
-  q.a.forEach((answer, j) => {
-    div.innerHTML += `<label><input type="radio" name="q${i}" value="${j}" required> ${answer}</label>`;
-  });
-  form.appendChild(div);
-});
-
-function getResult() {
-  const answers = Array.from(document.querySelectorAll("form input[type=radio]:checked"));
-  if (answers.length < questions.length) {
-    alert("Odpowiedz na wszystkie pytania!");
-    return;
-  }
-  const score = [0, 0, 0, 0, 0, 0];
-  answers.forEach((a, i) => {
-    const index = parseInt(a.value);
-    score[index]++;
-  });
-  const max = Math.max(...score);
-  const winner = score.indexOf(max);
-  const resultName = results[winner].replaceAll(' ', '_');
-
-  document.querySelectorAll(".result-card").forEach(card => card.style.display = "none");
-  document.getElementById(resultName).style.display = "block";
-}
 </script>
 </body>
 </html>
